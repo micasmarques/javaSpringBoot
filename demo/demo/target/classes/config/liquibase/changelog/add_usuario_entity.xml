@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="1" author="micael.marques.silva" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="TB_USUARIO">
+
+            <column name="ID" type="int" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="DATA_CADASTRO" type="dateTime">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="NOME" type="varchar(30)">
+                <constraints nullable="false"  unique="true"/>
+            </column>
+
+            <column name="LOGIN" type="varchar(15)">
+            </column>
+
+            <column name="SENHA" type="varchar(10)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="TELEFONE" type="varchar(11">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="EMAIL" type="varchar(100)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="PERFIL" type="char(1)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="STATUS" type="char(1)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
